@@ -3,14 +3,21 @@ Archivo .h de la clase Notas
 Autor: Raúl Arcos Martínez
 Fecha: 09/06/2024
 */
-#include <string.h>
+#include <string>
+#include "Citas.h"
+using namespace std;
 class Notas
 {
     //Atributos de instancia
     private:
     string nota;
-    Citas cita;
 
     //Metodos
-    escribirNota()
+    public:
+    //Constructores
+    Notas();
+    //Metodos
+    void escribirNota(string nota);
+    void imprimirNota();
+
 };
