@@ -1,5 +1,5 @@
 /*
-Archivo .h de la clase paciente
+Archivo .h de la clase dentista
 Autor: Raúl Arcos Martínez
 Fecha: 10/06/2024
 */
@@ -18,6 +18,6 @@ class Dentista
     public:
     //Constructor
     Dentista(string nombre);
-    void registrarClientes(Paciente paciente);
+    void registrarClientes(const Paciente& paciente);
     void consultarCitas(string fecha);
 };

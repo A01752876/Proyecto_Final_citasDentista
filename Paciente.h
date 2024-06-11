@@ -14,15 +14,16 @@ class Paciente
     private:
     string nombre;
     string numero;
-    string tratamiento;
-    vector<Citas> cita;
+    Citas cita;
+    //vector<Citas> cita;
     
     public:
     //Constructor
-    Paciente(string nombre, string numero, string tratamiento, Citas cita);
+    Paciente(string nombre, string numero, Citas cita);
     //Metodos
+    void registrarCita(Cita cita);
+    void getCita();
     void imprimirPaciente();
-    void registrarCita(const $Cita cita);
     void cancelarCita();
 
 };

@@ -4,7 +4,6 @@ Autor: Raúl Arcos Martínez
 Fecha: 09/06/2024
 */
 #include <string>
-#include "Notas.h"
 #include "Paciente.h"
 using namespace std;
 
@@ -19,10 +18,10 @@ class Citas
 
     public:
     //Constructor
-    Citas(string fecha,string tratamiento, Paciente paciente, Nota nota);
+    Citas(string fecha,string tratamiento, Paciente paciente);
     //Metodos
     string getFecha();
     void imprimirCita();
-    void obtenerDetalle();
+    void cancelarCita();
     
 };
