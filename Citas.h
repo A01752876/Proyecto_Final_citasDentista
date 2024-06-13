@@ -4,7 +4,6 @@ Autor: Raúl Arcos Martínez
 Fecha: 09/06/2024
 */
 #include <string>
-#include "Paciente.h"
 using namespace std;
 
 class Citas
@@ -12,15 +11,14 @@ class Citas
     //Atributos de instancia
     private:
     string fecha;
-    string tratatmiento;
-    Paciente paciente;
-    Nota nota;
+    string tratamiento;
 
     public:
     //Constructor
-    Citas(string fecha,string tratamiento, Paciente paciente);
+    Citas(string fecha,string tratamiento);
     //Metodos
     string getFecha();
+    
     void imprimirCita();
     void cancelarCita();
     

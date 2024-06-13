@@ -8,11 +8,10 @@ Fecha: 10/06/2024
 #include "Citas.h"
 using namespace std;
 
-Citas::Citas(string fecha, string tratamiento, Paciente paciente,)
+Citas::Citas(string fecha, string tratamiento)
 {
     this->fecha = fecha;
     this->tratamiento = tratamiento;
-    this->paciente = paciente;
 }
 
 string Citas::getFecha()
@@ -25,12 +24,11 @@ void Citas::imprimirCita()
     cout << "---Cita---" << endl;
     cout << "   " << fecha << "   " << endl;
     cout << "   " << tratamiento << "   " <<endl;
-    cout << paciente.imprimirPaciente() << endl;
 }
 
 void Citas::cancelarCita()
 {
-    fecha: "00/00/00"
-    tratamineto = "cita cancelada"
+    fecha = "00/00/00";
+    tratamiento = "cita cancelada";
     
 }

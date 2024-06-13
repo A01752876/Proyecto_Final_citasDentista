@@ -13,11 +13,13 @@ class Dentista
     //Atributos de instancia
     private:
     string nombre;
-    vector<Pacientes> clientes;
+    vector<Paciente> clientes;
 
     public:
     //Constructor
     Dentista(string nombre);
     void registrarClientes(const Paciente& paciente);
     void consultarCitas(string fecha);
+    void imprimirDentista();
+    vector<Paciente>& getClientes();
 };

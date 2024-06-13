@@ -5,11 +5,12 @@ Fecha: 10/06/2024
 */
 #include <string>
 #include "Notas.h"
+#include <iostream>
 using namespace std;
 
 Notas::Notas()
 {
-    nota = "--Sin comentarios en la cita--";
+    nota = "--Sin comentarios en el paciente--";
 }
 
 void Notas::escribirNota(string nota)

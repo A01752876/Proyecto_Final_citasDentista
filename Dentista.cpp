@@ -11,7 +11,7 @@ using namespace std;
 
 Dentista::Dentista(string nombre)
 {
-    this->nombre:nombre
+    this->nombre = nombre;
 
 }
 
@@ -22,9 +22,20 @@ void Dentista::registrarClientes(const Paciente& paciente)
 
 void Dentista::consultarCitas(string fecha)
 {
-    cout << "¿Que fecha gusta consultar? dd/mm/aa: " <<endl;
+    string fecha_aconsultar;
+    cout << "¿Que fecha gusta consultar? dd/mm/aa: " << endl;
     cin >> fecha_aconsultar;
 
     //for que recorra arreglo de los clientes, despues haga un getCita y despues un get fecha
+    //for (auto paciente: clientes):
+}
 
+void Dentista::imprimirDentista()
+{
+    cout << nombre;
+}
+
+vector<Paciente> &Dentista::getClientes()
+{
+    return clientes;
 }
