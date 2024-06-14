@@ -5,22 +5,25 @@ Autor: Raúl Arcos Martínez
 Fecha: 11/06/2024
 */
 #include "Paciente.h"
-#include "Citas.h"
-#include "Notas.h"
 #include <iostream>
 #include <string>
 using namespace std;
 
+Paciente::Paciente()
+{
+    nombre = " ";
+    numero = " ";
+}
 Paciente::Paciente(string nombre, string numero)
 {
     this-> nombre = nombre;
     this-> numero = numero;
-    Citas cita("00/00/00", "-----");
-    Notas nota();
-    
 }
 
-
+void Paciente::setTelefono(string telefono)
+{
+    this->numero = telefono;
+}
 
 void Paciente::imprimirPaciente()
 {
@@ -33,9 +36,9 @@ void Paciente::cancelarCita()
 {
     cita.cancelarCita();
 }
-void Paciente::registrarCita(Citas cita)
+void Paciente::registrarCita(string fecha, string tratamiento)
 {
-    this->cita = cita;
+    Citas cita (fecha, tratamiento);
 }
 
 Citas Paciente::getCita()
@@ -51,4 +54,9 @@ Notas Paciente::getNota()
 string Paciente::getNombre()
 {
     return nombre;
+}
+
+void Paciente::setNombre(string nombre)
+{
+    this->nombre=nombre;
 }

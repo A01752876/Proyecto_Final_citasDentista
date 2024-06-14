@@ -8,6 +8,8 @@ Fecha: 09/06/2024
 #include "Citas.h"
 #include "Notas.h"
 using namespace std;
+#ifndef _Paciente_h
+#define _Paciente_h
 
 class Paciente
 {
@@ -22,12 +24,16 @@ class Paciente
     public:
     //Constructor
     Paciente(string nombre, string numero);
+    Paciente();
     //Metodos
-    void registrarCita(Citas cita);
+    void registrarCita(string fecha, string tratamiento);
     Citas getCita();
     Notas getNota();
     string getNombre();
+    void setNombre(string nombre);
+    void setTelefono(string telefono);
     void imprimirPaciente();
     void cancelarCita();
 
 };
+#endif

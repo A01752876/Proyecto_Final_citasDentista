@@ -6,7 +6,8 @@ Fecha: 09/06/2024
 #include <string>
 #include <iostream>
 using namespace std;
-
+#ifndef _Citas_h
+#define _Citas_h
 class Citas
 {
     //Atributos de instancia
@@ -16,6 +17,7 @@ class Citas
 
     public:
     //Constructor
+    Citas();
     Citas(string fecha,string tratamiento);
     //Metodos
     string getFecha();
@@ -24,3 +26,4 @@ class Citas
     void cancelarCita();
     
 };
+#endif

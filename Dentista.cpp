@@ -18,8 +18,9 @@ Dentista::Dentista(string nombre)
 
 }
 
-void Dentista::registrarClientes(const Paciente& paciente)
+void Dentista::registrarClientes(string nombre, string numero)
 {
+    Paciente paciente(nombre,numero);
     clientes.push_back(paciente);
 }
 
@@ -35,6 +36,10 @@ void Dentista::consultarCitas()
         {
             cliente.getCita().imprimirCita();
         }
+        else 
+        {
+            cout << "Sin citas el día de hoy" << endl;
+        }
         
     }
     
@@ -47,10 +52,13 @@ void Dentista::imprimirDentista()
 
 void Dentista::imprimirClientes()
 {
+    int numero_cliente = 1;
     cout << "Lista de Pacientes: " << endl;
-    for (size_t i =0; i + 1 << clientes.size(); i++)
+    //size_t i =0; i + 1 << clientes.size(); i++
+    for (auto cliente : clientes)
             {
-                cout << i + 1 << ". " << clientes[i].getNombre();
+                cout <<numero_cliente<< ". " << cliente.getNombre() << endl;
+                numero_cliente += 1;
             }
             cout<< endl;
 }

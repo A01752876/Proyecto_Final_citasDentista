@@ -7,6 +7,8 @@ Fecha: 10/06/2024
 #include <vector>
 #include "Paciente.h"
 using namespace std;
+#ifndef _Dentista_h
+#define _Dentista_h
 
 class Dentista 
 {
@@ -18,9 +20,10 @@ class Dentista
     public:
     //Constructor
     Dentista(string nombre);
-    void registrarClientes(const Paciente& paciente);
+    void registrarClientes(string nombre, string numero);
     void consultarCitas();
     void imprimirDentista();
     void imprimirClientes();
     vector<Paciente>& getClientes();
 };
+#endif

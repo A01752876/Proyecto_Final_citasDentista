@@ -18,7 +18,7 @@ void Notas::escribirNota()
     string texto;
     cout << "Escriba la nota del paciente: [Enter para terminar]" << endl;
     getline(cin, texto);
-    nota = texto;
+    this->nota = texto;
 }
 
 void Notas::imprimirNota()

@@ -7,100 +7,106 @@ Fecha: 12/06/2024
 #include <vector>
 #include <iostream>
 #include "Dentista.h"
-#include "Paciente.h"
-#include "Citas.h"
-#include "Notas.h"
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
     string nombre_dentista;
     cout << "Bienvenido al consultorio, indicar el nombre del dentista: " << endl;
-    cin >> nombre_dentista ;
+    getline(cin, nombre_dentista);
     Dentista dentista(nombre_dentista); // se debe de enviar el vector tambien?
     dentista.imprimirDentista();
 
-    //Ciclo del menu
-    cout << "¿Que desea hacer?" << endl; 
-    cout << "[1] Registrar Clientes" << endl;
-    cout << "[2] Registrar Citas" << endl;
-    cout << "[3] Cancelar Citas" << endl;
-    cout << "[4] Consultar Citas" << endl;
-    cout << "[5] Notas" << endl;
-    cout << "[0] Salir";
-    int opcion;
-    cin >> opcion;
+    
+    //declaracion de constantes
+    string nombre_paciente;
+    string telefono;
+    string fecha;
+    string tratamiento;
+    int cliente_seleccionado;
+    string opcion_nota;
+    vector<Paciente>& clientes = dentista.getClientes(); //obtenemos el get para poder modificarlo posteriormente
+    int opcion = 0;
 
-    switch(opcion)
+    while(opcion!=6)
     {
-        case 1:
-            string nombre_paciente;
-            string telefono;
+        //Ciclo del menu
+        cout << "¿Que desea hacer?" << endl; 
+        cout << "[1] Registrar Clientes" << endl;
+        cout << "[2] Registrar Citas" << endl;
+        cout << "[3] Cancelar Citas" << endl;
+        cout << "[4] Consultar Citas" << endl;
+        cout << "[5] Notas" << endl;
+        cout << "[6] Salir" << endl;
+        cout << " " << endl;
+        cin >> opcion;
+
+        if(opcion==1) 
+        {
             cout << "Nombre del paciente: " << endl;
             cin >> nombre_paciente;
             cout << "Número telefonico del paciente:" << endl;
             cin >> telefono;
-            Paciente paciente(nombre_paciente, telefono);
-            dentista.registrarClientes(paciente);
-            break;
+            //Paciente paciente(nombre_paciente, telefono);
+            dentista.registrarClientes(nombre_paciente, telefono); //crear paciente dentro de registrar
+            
+        }
 
-        case 2:
+        else if(opcion==2)
+        {
+            
             cout<<"Escoja el paciente al que se le añadirá una cita: " << endl;
-            vector<Paciente>& clientes = dentista.getClientes(); //preguntar del get clientes
+            //vector<Paciente>& clientes = dentista.getClientes(); //preguntar del get clientes
 
             dentista.imprimirClientes();
-            int cliente_seleccionado;
             cin >> cliente_seleccionado;
 
-            string fecha;
-            string tratamiento;
             cout << "Fecha de la cita (dd/mm/aa) : " << endl;
             cin >> fecha;
             cout << "Tratamiento que recibirá: " << endl;
             cin >> tratamiento;
-            Citas cita(fecha, tratamiento);
 
-            clientes[cliente_seleccionado].registrarCita(cita);
-
+            clientes[cliente_seleccionado-1].registrarCita(fecha, tratamiento);
             
-            break;
-        case 3:
+            
+        }
+        
+        else if(opcion==3)
+        {
             cout<<"Escoja el paciente al que se le cancelará la cita: " << endl;
-            vector<Paciente>& clientes = dentista.getClientes(); //preguntar del get clientes
-
             dentista.imprimirClientes();
-            int cliente_seleccionado;
             cin >> cliente_seleccionado;
 
-            clientes[cliente_seleccionado].cancelarCita();
+            clientes[cliente_seleccionado-1].cancelarCita();
             
-            break;
-        case 4:
+        }
+        else if(opcion==4)
+        {
             dentista.consultarCitas();
             
-            break;
+        }
 
-        case 5:
+        else if(opcion==5)
+        {
              cout<<"Escoja el paciente al que se le añadirá una nota o revisará la nota: " << endl;
-            vector<Paciente>& clientes = dentista.getClientes(); //preguntar del get clientes
 
             dentista.imprimirClientes();
-            int cliente_seleccionado;
             cin >> cliente_seleccionado;
-
-            string opcion;
+           
+            
             cout << "Desea añadir una nota [n], o ver la nota [s]" << endl;
-            cin >> opcion;
+            cin >> opcion_nota;
 
-            if(opcion== "n")
+            if(opcion_nota== "n")
             {
-                clientes[cliente_seleccionado].getNota().escribirNota();
+                cin.ignore();
+                clientes[cliente_seleccionado-1].getNota().escribirNota();
                 cout << endl;
             }
 
-            if(opcion == "s")
+            else if(opcion_nota == "s")
             {
-                clientes[cliente_seleccionado].getNota().imprimirNota();
+                clientes[cliente_seleccionado-1].getNota().imprimirNota();
                 cout << endl;
             }
             else
@@ -108,14 +114,16 @@ int main(int argc, char const *argv[])
                 cout << "Opción invalida" << endl;
             }
             
-            break;
+        }
+        else
+        {
+            cout << "Opción invalida" << endl;
+        }
 
 
-        case 0:
-            cout << "¡Buen día!" << endl;
-            break;
+        
     }
 
-
+    cout<< "Buen día" <<endl;
     return 0;
 }

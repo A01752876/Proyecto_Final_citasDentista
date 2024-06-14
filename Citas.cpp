@@ -8,6 +8,12 @@ Fecha: 10/06/2024
 #include "Citas.h"
 using namespace std;
 
+Citas::Citas()
+{
+    fecha = "00/00/00";
+    tratamiento = "sin tratamiento";
+}
+
 Citas::Citas(string fecha, string tratamiento)
 {
     this->fecha = fecha;

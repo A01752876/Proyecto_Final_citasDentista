@@ -4,8 +4,9 @@ Autor: Raúl Arcos Martínez
 Fecha: 09/06/2024
 */
 #include <string>
-#include "Citas.h"
 using namespace std;
+#ifndef _Notas_h
+#define _Notas_h
 class Notas
 {
     //Atributos de instancia
@@ -21,3 +22,4 @@ class Notas
     void imprimirNota();
 
 };
+#endif
