@@ -4,6 +4,7 @@ Autor: Raúl Arcos Martínez
 Fecha: 09/06/2024
 */
 #include <string>
+#include <iostream>
 using namespace std;
 
 class Citas
@@ -18,7 +19,7 @@ class Citas
     Citas(string fecha,string tratamiento);
     //Metodos
     string getFecha();
-    
+
     void imprimirCita();
     void cancelarCita();
     

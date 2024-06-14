@@ -17,7 +17,7 @@ class Notas
     //Constructores
     Notas();
     //Metodos
-    void escribirNota(string nota);
+    void escribirNota();
     void imprimirNota();
 
 };

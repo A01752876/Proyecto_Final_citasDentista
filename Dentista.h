@@ -19,7 +19,8 @@ class Dentista
     //Constructor
     Dentista(string nombre);
     void registrarClientes(const Paciente& paciente);
-    void consultarCitas(string fecha);
+    void consultarCitas();
     void imprimirDentista();
+    void imprimirClientes();
     vector<Paciente>& getClientes();
 };
