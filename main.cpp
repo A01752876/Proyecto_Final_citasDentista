@@ -40,11 +40,12 @@ int main(int argc, char const *argv[])
         cout << "[6] Salir" << endl;
         cout << " " << endl;
         cin >> opcion;
+        cin.ignore();
 
         if(opcion==1) 
         {
             cout << "Nombre del paciente: " << endl;
-            cin >> nombre_paciente;
+            getline(cin,nombre_paciente);
             cout << "Número telefonico del paciente:" << endl;
             cin >> telefono;
             //Paciente paciente(nombre_paciente, telefono);
@@ -60,11 +61,12 @@ int main(int argc, char const *argv[])
 
             dentista.imprimirClientes();
             cin >> cliente_seleccionado;
+            cin.ignore();
 
             cout << "Fecha de la cita (dd/mm/aa) : " << endl;
             cin >> fecha;
             cout << "Tratamiento que recibirá: " << endl;
-            cin >> tratamiento;
+            getline(cin, tratamiento);
 
             clientes[cliente_seleccionado-1].registrarCita(fecha, tratamiento);
             
@@ -76,6 +78,7 @@ int main(int argc, char const *argv[])
             cout<<"Escoja el paciente al que se le cancelará la cita: " << endl;
             dentista.imprimirClientes();
             cin >> cliente_seleccionado;
+            cin.ignore();
 
             clientes[cliente_seleccionado-1].cancelarCita();
             
@@ -92,7 +95,7 @@ int main(int argc, char const *argv[])
 
             dentista.imprimirClientes();
             cin >> cliente_seleccionado;
-           
+            cin.ignore();
             
             cout << "Desea añadir una nota [n], o ver la nota [s]" << endl;
             cin >> opcion_nota;

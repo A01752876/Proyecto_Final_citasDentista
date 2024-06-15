@@ -38,7 +38,7 @@ void Paciente::cancelarCita()
 }
 void Paciente::registrarCita(string fecha, string tratamiento)
 {
-    Citas cita (fecha, tratamiento);
+    cita = Citas(fecha, tratamiento);
 }
 
 Citas Paciente::getCita()

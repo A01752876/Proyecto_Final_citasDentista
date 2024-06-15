@@ -14,7 +14,7 @@ using namespace std;
 Dentista::Dentista(string nombre)
 {
     this->nombre = nombre;
-    vector<Paciente> clientes(); //preguntar de la declaración
+    //vector<Paciente> clientes(); //preguntar de la declaración
 
 }
 
@@ -29,14 +29,16 @@ void Dentista::consultarCitas()
     string fecha_aconsultar;
     cout << "¿Que fecha gusta consultar? dd/mm/aa: " << endl;
     cin >> fecha_aconsultar;
-
+    
+    bool citasEncontradas = false;
     for (auto cliente: clientes)
     {
         if(cliente.getCita().getFecha() == fecha_aconsultar) //preguntar 
         {
             cliente.getCita().imprimirCita();
+            citasEncontradas = true;
         }
-        else 
+        if(!citasEncontradas) 
         {
             cout << "Sin citas el día de hoy" << endl;
         }
