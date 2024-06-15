@@ -44,6 +44,7 @@ int main(int argc, char const *argv[])
 
         if(opcion==1) 
         {
+            cout << "--------- Registrar Clientes --------" << endl; //37
             cout << "Nombre del paciente: " << endl;
             getline(cin,nombre_paciente);
             cout << "Número telefonico del paciente:" << endl;
@@ -55,6 +56,7 @@ int main(int argc, char const *argv[])
 
         else if(opcion==2)
         {
+            cout << "---------- Registrar Citas ----------" << endl;
             
             cout<<"Escoja el paciente al que se le añadirá una cita: " << endl;
             //vector<Paciente>& clientes = dentista.getClientes(); //preguntar del get clientes
@@ -75,6 +77,7 @@ int main(int argc, char const *argv[])
         
         else if(opcion==3)
         {
+            cout << "----------- Cancelar Citas ----------" << endl;
             cout<<"Escoja el paciente al que se le cancelará la cita: " << endl;
             dentista.imprimirClientes();
             cin >> cliente_seleccionado;
@@ -85,13 +88,15 @@ int main(int argc, char const *argv[])
         }
         else if(opcion==4)
         {
+            cout << "--------- Consultar Clientes --------" << endl;
             dentista.consultarCitas();
             
         }
 
         else if(opcion==5)
         {
-             cout<<"Escoja el paciente al que se le añadirá una nota o revisará la nota: " << endl;
+            cout << "--------------- Notas ---------------" << endl;
+            cout<<"Escoja el paciente al que se le añadirá una nota o revisará la nota: " << endl;
 
             dentista.imprimirClientes();
             cin >> cliente_seleccionado;

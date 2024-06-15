@@ -48,6 +48,7 @@ Citas Paciente::getCita()
 
 Notas Paciente::getNota()
 {
+
     return nota;
 }
 
